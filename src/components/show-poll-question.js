@@ -70,23 +70,6 @@ class ShowPollQuestion extends Component {
               <button className="btn btn-success btn-lg" disabled={!this.state.isTrue}>Add Vote</button>
             </fieldset>
           </form>
-          <div className="parent">
-            <div className="child">
-              <h1>child 1</h1>
-            </div>
-            <div className="child">
-              <h1>child 2</h1>
-            </div>
-            <div className="child">
-              <h1>child 3</h1>
-            </div>
-            <div className="child">
-              <h1>child 4</h1>
-            </div>
-            <div className="child">
-              <h1>child 5</h1>
-            </div>
-          </div>
         </div>
       </div>
     );
