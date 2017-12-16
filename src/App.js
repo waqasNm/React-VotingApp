@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Navbar from './container/navbar';
 import Main from './router';
-
 import * as firebase from 'firebase';
 
 var config = {
@@ -20,7 +19,7 @@ class App extends Component {
     return (
       <div>
           <Navbar/>
-          <Main/>
+          <Main/>          
       </div>
     );
   }

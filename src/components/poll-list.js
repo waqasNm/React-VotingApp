@@ -11,7 +11,7 @@ class PreviousPoll extends Component {
 
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const rootRef = firebase.database().ref();
     const childRef = rootRef.child('data');
     let arrData = [];
@@ -22,12 +22,15 @@ class PreviousPoll extends Component {
         obj.id = ev.key;
         arrData.push(obj)
         this.setState({ data: arrData });
-        console.log(this.state.data)
       });
     });
   }
 
+
+
   render() {
+    
+    
     return (
       <div className="container">
         <h1 className='text-center'>Poll List Component</h1>
@@ -35,8 +38,14 @@ class PreviousPoll extends Component {
         {this.state.data.map((val, ind) => {
           return [
               <li className="list-group-item justify-content-between" key={ind}>
-               <Link to={'/polling/'+val.id}>{val.pollName}</Link>               
-                <span className="badge badge-default badge-pill">14</span>
+               <span>Polling Name:</span>
+               <Link to={'/polling/'+val.pollName+'/'+val.id}>{val.pollName}</Link>
+               <Link to={'/graph/'+val.pollName+'/'+val.id}>Result</Link>                              
+                <span className="badge badge-default badge-pill">
+                {
+                  Math.max.apply(Math,val.opts.map((o) => {return o.vote }))
+                }
+                </span>
               </li>
               ]
         })

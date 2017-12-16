@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
+    linkStyle ={
+        textDecoration:'none',
+        color:'#000'
+    }
     render() {
         return (
 
@@ -14,13 +18,13 @@ class Navbar extends Component {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link to='/'>Create Poll</Link>
+                            <Link style={this.linkStyle} to='/'>Create Poll</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/previouspoll'>Previous Poll</Link>
+                            <Link style={this.linkStyle} to='/previouspoll'>Previous Poll</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/pollinglist'>Polling List</Link>
+                            <Link style={this.linkStyle} to='/pollinglist'>Polling List</Link>
                         </li>
                     </ul>
                 </div>
